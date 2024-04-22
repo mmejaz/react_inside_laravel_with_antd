@@ -16,23 +16,23 @@ function Dashboard() {
         <>
             <Row gutter={16}>
                 <Col xl={6} xs={24} md={12}>
-                    <Card title="Card title" bordered={false}>
+                    <Card title="" bordered={false}>
                         {name}
                     </Card>
                 </Col>
                 <Col xl={6} xs={24} md={12}>
-                    <Card title="Card title" bordered={false}>
+                    <Card title="" bordered={false}>
                         {age}
                     </Card>
                 </Col>
                 <Col xl={6} xs={24} md={12}>
-                    <Card title="Card title" bordered={false}>
+                    <Card title="" bordered={false}>
                         {status}
                     </Card>
                 </Col>
                 <Col xl={6} xs={24} md={12}>
-                    <Card title="Card title" bordered={false}>
-                        <Button type="primary" onClick={() => changeAget()} />
+                    <Card title="" bordered={false}>
+                        {/* <Button type="primary" onClick={() => changeAget()} /> */}
                     </Card>
                 </Col>
             </Row>
