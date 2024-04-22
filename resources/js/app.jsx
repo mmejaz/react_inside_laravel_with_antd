@@ -5,27 +5,19 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import Home from "./Page/Home";
 import { configureStore } from "@reduxjs/toolkit";
-import {Provider} from 'react-redux'
+import { Provider } from "react-redux";
+import rootReducer from "./store/rootReducer";
 
-const initialState={
-    name:"Muhammad Ejaz",
-    age:"36",
-    status:"single"
-}
 const store = configureStore({
-    reducer:(state)=>{
-        return state
-    },
-    preloadedState:initialState
+    reducer: rootReducer,
 });
 const root = ReactDOM.createRoot(document.getElementById("app"));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-        <Provider store={store}>
-            <Home></Home>
+            <Provider store={store}>
+                <Home></Home>
             </Provider>
         </BrowserRouter>
-    </React.StrictMode>,
+    </React.StrictMode>
 );
-

@@ -1,30 +1,41 @@
-import { Card, Col, Row } from "antd";
-
+import { Card, Col, Row, Button } from "antd";
+import { useSelector, useDispatch } from "react-redux";
+import {
+    updateAge,
+    updateName,
+    updateStatus,
+    fetchUsers,
+} from "../store/slices/userSlice";
 function Dashboard() {
+    const { name, age, status } = useSelector((state) => state.userSlice);
+    const dispatch = useDispatch();
+    const changeAget = () => {
+        dispatch(fetchUsers());
+    };
     return (
         <>
             <Row gutter={16}>
                 <Col xl={6} xs={24} md={12}>
                     <Card title="Card title" bordered={false}>
-                        Card content
+                        {name}
                     </Card>
                 </Col>
                 <Col xl={6} xs={24} md={12}>
                     <Card title="Card title" bordered={false}>
-                        Card content
+                        {age}
                     </Card>
                 </Col>
                 <Col xl={6} xs={24} md={12}>
                     <Card title="Card title" bordered={false}>
-                        Card content
+                        {status}
                     </Card>
                 </Col>
                 <Col xl={6} xs={24} md={12}>
                     <Card title="Card title" bordered={false}>
-                        Card content
+                        <Button type="primary" onClick={() => changeAget()} />
                     </Card>
                 </Col>
-            </Row>{" "}
+            </Row>
         </>
     );
 }
