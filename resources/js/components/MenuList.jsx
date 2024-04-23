@@ -17,50 +17,55 @@ function MenuList() {
     };
     const items = [
         {
-            label: "Home",
-            key: "/",
-            icon: <HomeFilled />,
-        },
-        {
-            label: "Activity",
-            key: "activity",
-            icon: <AppstoreAddOutlined />,
+            label: "Dashboard",
+            type: "group",
             children: [
                 {
-                    label: "Task1",
-                    key: "task1",
+                    label: "Home",
+                    key: "/",
+                    icon: <HomeFilled />,
                 },
                 {
-                    label: "Task2",
-                    key: "task2",
+                    label: "Activity",
+                    key: "activity",
+                    icon: <AppstoreAddOutlined />,
+                    children: [
+                        {
+                            label: "Task1",
+                            key: "task1",
+                        },
+                        {
+                            label: "Task2",
+                            key: "task2",
+                        },
+                    ],
                 },
-
+                {
+                    label: "Task",
+                    key: "task",
+                    icon: <BarsOutlined />,
+                },
+                {
+                    label: "Payment",
+                    key: "payment",
+                    icon: <PayCircleOutlined />,
+                },
+                {
+                    label: "Progress",
+                    key: "progress",
+                    icon: <AreaChartOutlined />,
+                },
+                {
+                    label: "Settings",
+                    key: "settings",
+                    icon: <SettingOutlined />,
+                },
+                {
+                    label: "Charts",
+                    key: "charts",
+                    icon: <SettingOutlined />,
+                },
             ],
-        },
-        {
-            label: "Task",
-            key: "task",
-            icon: <BarsOutlined />,
-        },
-        {
-            label: "Payment",
-            key: "payment",
-            icon: <PayCircleOutlined />,
-        },
-        {
-            label: "Progress",
-            key: "progress",
-            icon: <AreaChartOutlined />,
-        },
-        {
-            label: "Settings",
-            key: "settings",
-            icon: <SettingOutlined />,
-        },
-        {
-            label: "Charts",
-            key: "charts",
-            icon: <SettingOutlined />,
         },
     ];
     return (
@@ -70,6 +75,7 @@ function MenuList() {
             className="menu-bar"
             mode="inline"
             onClick={(e) => pageRedirect(e.key)}
+            defaultActiveFirst={["/"]}
         ></Menu>
     );
 }

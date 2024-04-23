@@ -14,6 +14,9 @@ function Dashboard() {
     };
     return (
         <>
+            <div style={{ padding: "10px" }}>
+                <small>Home / Dashboard</small>
+            </div>
             <Row gutter={16}>
                 <Col xl={6} xs={24} md={12}>
                     <Card title="" bordered={false}>
