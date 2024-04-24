@@ -11,12 +11,13 @@ import rootReducer from "./store/rootReducer";
 const store = configureStore({
     reducer: rootReducer,
 });
+
 const root = ReactDOM.createRoot(document.getElementById("app"));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
             <Provider store={store}>
-                <Home></Home>
+                <Home />
             </Provider>
         </BrowserRouter>
     </React.StrictMode>

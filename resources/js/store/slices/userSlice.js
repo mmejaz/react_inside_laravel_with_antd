@@ -5,7 +5,8 @@ const initialState = {
     age: "36",
     status: "single",
     loading: false,
-    error: null
+    error: null,
+    themeColor: "crimson"
 };
 
 export const fetchUsers = createAsyncThunk(
@@ -33,6 +34,9 @@ const userSlice = createSlice({
         },
         updateStatus(state, action) {
             state.status = action.payload;
+        },
+        updateThemeColor(state, action) { 
+            state.themeColor = action.payload;
         }
     },
     extraReducers: (builder) => {
@@ -52,5 +56,5 @@ const userSlice = createSlice({
     }
 });
 
-export const { updateAge, updateName, updateStatus } = userSlice.actions;
+export const { updateAge, updateName, updateStatus, updateThemeColor } = userSlice.actions;
 export default userSlice.reducer;
