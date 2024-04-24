@@ -6,6 +6,7 @@ import {
     updateStatus,
     fetchUsers,
 } from "../store/slices/userSlice";
+
 function Dashboard() {
     const { name, age, status } = useSelector((state) => state.userSlice);
     const dispatch = useDispatch();
@@ -35,7 +36,7 @@ function Dashboard() {
                 </Col>
                 <Col xl={6} xs={24} md={12}>
                     <Card title="" bordered={false}>
-                        {/* <Button type="primary" onClick={() => changeAget()} /> */}
+                        <Button type="primary" onClick={() => changeAget()} />
                     </Card>
                 </Col>
             </Row>

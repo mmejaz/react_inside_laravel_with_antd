@@ -48,8 +48,8 @@ const Login = () => {
                 autoComplete="off"
             >
                 <Form.Item
-                    label="Username"
-                    name="username"
+                    label="Email"
+                    name="email"
                     rules={[
                         {
                             required: true,
@@ -73,7 +73,7 @@ const Login = () => {
                     <Input.Password />
                 </Form.Item>
 
-                <Form.Item
+                {/* <Form.Item
                     name="remember"
                     valuePropName="checked"
                     wrapperCol={{
@@ -81,8 +81,8 @@ const Login = () => {
                         span: 16,
                     }}
                 >
-                    {/* <Checkbox>Remember me</Checkbox> */}
-                </Form.Item>
+                    <Checkbox>Remember me</Checkbox>
+                </Form.Item> */}
 
                 <Form.Item
                     wrapperCol={{

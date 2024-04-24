@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import CommonService from '../../gateway/CommonService'
 
 const initialState = {
     user: [],
@@ -6,39 +7,18 @@ const initialState = {
     error: null,
 };
 
-// export const authUser = createAsyncThunk("userAuthentication", async () => {
-//     try {
-//         const response = await fetch("/login");
-//         const user = await response.json();
-//         return user;
-//     } catch (error) {
-//         throw Error("Failed to fetch users");
-//     }
-// });
-
-export const authUser = createAsyncThunk(
-    "userAuthentication",
-    async (credentials) => {
-        try {
-            const response = await fetch("/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(credentials),
-            });
-
-            if (!response.ok) {
-                throw new Error("Failed to authenticate user");
-            }
-
-            const user = await response.json();
-            return user;
-        } catch (error) {
-            throw new Error("Failed to authenticate user");
-        }
+export const authUser = createAsyncThunk("userAuthentication", async (data) => {
+    try {
+        const response = await CommonService.createOrUpdate(data, 'login');
+        return response;
+    } catch (error) {
+        throw Error("Failed to fetch users");
     }
-);
+});
+
+
+
+
 
 const authSlice = createSlice({
     name: "user-authentication",

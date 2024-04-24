@@ -3,7 +3,7 @@ import { notification } from 'antd';
 const unauthorizedCode = [400, 401, 403];
 
 const service = axios.create({
-	baseURL: API_BASE_URL,
+	baseURL: 'http://127.0.0.1:8000/',
 	timeout: 60000
 });
 
